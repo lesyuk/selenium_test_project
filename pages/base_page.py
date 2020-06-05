@@ -9,7 +9,7 @@ class BasePage:
     Other screens inherit from this class.
     """
     def __init__(self, driver):
-        """Constructor class"""
+        """Constructor"""
         self.driver = driver
         self.base_url = "https://cian.ru"
 
@@ -19,7 +19,7 @@ class BasePage:
                                                       message=f"Can't find element by locator {locator}")
 
     def find_elements(self, locator, time=10):
-        """WebDriverWait wrapper that find one element and return it"""
+        """WebDriverWait wrapper that find several elements and return them"""
         return WebDriverWait(self.driver, time).until(EC.presence_of_all_elements_located(locator),
                                                       message=f"Can't find elements by locator {locator}")
 
